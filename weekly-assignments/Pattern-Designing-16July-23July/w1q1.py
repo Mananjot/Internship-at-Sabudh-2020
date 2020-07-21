@@ -1,5 +1,5 @@
 """
-Question: 
+Question: Pattern --> Triangle of numbers
 Print the following pattern for the given number of rows. 
 Pattern for N = 4 The dots represent spaces.
       1
