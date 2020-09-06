@@ -1,4 +1,5 @@
 """
+
 Question2: Implement Queue using Stacks
 
 Implement the following operations of a queue using stacks.
@@ -50,7 +51,7 @@ class MyQueue(object):
             return True
         else:
             return False
-            
+
 obj = MyQueue()
 obj.push(1)
 obj.push(2)
