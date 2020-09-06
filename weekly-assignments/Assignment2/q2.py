@@ -1,0 +1,59 @@
+"""
+Question2: Implement Queue using Stacks
+
+Implement the following operations of a queue using stacks.
+
+push(x) -- Push element x to the back of queue.
+pop() -- Removes the element from in front of queue.
+peek() -- Get the front element.
+empty() -- Return whether the queue is empty.
+
+Example:
+
+MyQueue queue = new MyQueue();
+queue.push(1);
+queue.push(2);  
+queue.peek();  // returns 1
+queue.pop();   // returns 1
+queue.empty(); // returns false
+
+Notes:
+You must use only standard operations of a stack -- which means only push to top, peek/pop from top, size, and is empty operations are valid.
+Depending on your language, stack may not be supported natively. You may simulate a stack by using a list or deque (double-ended queue), as long as you use only standard operations of a stack.
+You may assume that all operations are valid (for example, no pop or peek operations will be called on an empty queue).
+
+"""
+
+class MyQueue(object):
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+        
+    def push(self, x):
+        self.stack1.append(x)
+        
+    def pop(self):
+        while len(self.stack1) != 0 :
+            self.stack2.append(self.stack1.pop())
+        top = self.stack2.pop()
+        
+        while len(self.stack2) != 0 :
+            self.stack1.append(self.stack2.pop())
+        return top
+        
+    def peek(self):
+        return self.stack1[0]
+        
+
+    def empty(self):
+        if len(self.stack1) == 0:
+            return True
+        else:
+            return False
+            
+obj = MyQueue()
+obj.push(1)
+obj.push(2)
+obj.pop()
+obj.peek()
+obj.empty()
